@@ -4,7 +4,7 @@ There's an even easier way to access the bell schedule and lunch menu—using th
 
 ## Getting the bell schedule
 
-We have provided several types of commands for accessing the bell schedule.
+I have provided several types of commands for accessing the bell schedule.
 
 > **Hey Google, tell me the bell schedule for tomorrow.**
 

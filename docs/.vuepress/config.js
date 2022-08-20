@@ -1,20 +1,20 @@
 module.exports = {
-  title: "Harker Bell Schedule Docs",
+  title: "Harker MS Bell Schedule Docs",
   description: "hello world",
   base: "/docs/",
   head: [],
   themeConfig: {
     lastUpdated: "Last updated",
-    repo: "BowenYin/harker-bell",
+    repo: "CMEONE/harker-ms-bell",
     nav: [
-      {text: "Back to Bell Schedule", link: "https://bell.harker.org"}
+      {text: "Back to Bell Schedule", link: "https://msbell.harker.xyz"}
     ],
     sidebar: [
       "/",
       {
         title: "General",
         collapsable: false,
-        children: ["/api", "/install", "/assistant", "/shortcuts", "/issues"]
+        children: ["/api", "/install", "/shortcuts", "/issues"]
       },
       {
         title: "Internal",

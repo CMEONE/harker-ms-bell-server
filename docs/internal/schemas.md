@@ -6,7 +6,7 @@ This page is scary and is meant for internal use only.
 
 This page contains database schemas for documents stored in MongoDB.
 
-### Collection `harker-bell/schedules`
+### Collection `harker-ms-bell/schedules`
 ```js
 {
   $jsonSchema: {
@@ -138,7 +138,7 @@ This page contains database schemas for documents stored in MongoDB.
 }
 ```
 
-### Collection `harker-bell/presets`
+### Collection `harker-ms-bell/presets`
 ```js
 {
   $jsonSchema: {
@@ -195,7 +195,7 @@ This page contains database schemas for documents stored in MongoDB.
 }
 ```
 
-### Collection `harker-bell/revisions`
+### Collection `harker-ms-bell/revisions`
 ```js
 {
   $jsonSchema: {
@@ -240,7 +240,7 @@ This page contains database schemas for documents stored in MongoDB.
 }
 ```
 
-### Collection `harker-bell/users`
+### Collection `harker-ms-bell/users`
 ```js
 {
   $jsonSchema: {
@@ -283,5 +283,5 @@ This page contains database schemas for documents stored in MongoDB.
 }
 ```
 
-### Collection `harker-bell/misc`
+### Collection `harker-ms-bell/misc`
 No schema.

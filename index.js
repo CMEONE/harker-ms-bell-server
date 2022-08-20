@@ -7,12 +7,12 @@ const socketio = require("./socket");
 const sentry = require("@sentry/node");
 const moment = require("moment");
 
-sentry.init({
-  dsn: process.env.SENTRY,
-  release: "harker-bell-server@"+require("./package.json").version,
-});
+// sentry.init({
+//   dsn: process.env.SENTRY,
+//   release: "harker-ms-bell-server@"+require("./package.json").version,
+// });
 console.log("Starting...");
-app.use(sentry.Handlers.requestHandler());
+// app.use(sentry.Handlers.requestHandler());
 app.use(express.json()); // use new built-in Express middleware
 app.use(express.urlencoded());
 mongodb.connect().then(db => {
@@ -24,38 +24,38 @@ mongodb.connect().then(db => {
   app.use("/scheduler", scheduler.router);
 
   app.get("/", (req, res) => {
-    res.send("You found a secret page! Come work with us at <a href=\"https://dev.harker.org/join/\">dev.harker.org/join</a>.");
+    res.send("You found a secret page!");
   });
   /** Responds with the bell schedule when a request from Actions on Google/Google Assistant is received. */
   app.post("/assistant", async (req, res) => {
-    try {
-      const query = req.body.queryResult;
-      if (!query.intent) return res.status(400);
-      switch (query.intent.name) {
-        // Get bell schedule
-        case "projects/harker-bell/agent/intents/37afe580-ee5c-4876-84b2-5744bbfa71bb":
-        case "projects/harker-dev/agent/intents/c96f9a09-488d-4549-a797-4554492bc6a6":
-          return res.send(await handleScheduleRequest(query, db));
-        // Get next period
-        case "projects/harker-bell/agent/intents/0c87869e-6cc5-4802-8189-097c46c80525":
-        case "projects/harker-dev/agent/intents/47162ef2-f484-46da-acd6-80ac2f4ca667":
-          return res.send(await handleNextPeriodRequest(query, db));
-        // Get period end
-        case "projects/harker-bell/agent/intents/8b404980-e565-4441-8d76-33b28d54eaaa":
-        case "projects/harker-dev/agent/intents/7aad77d4-60fe-46ff-ae88-b24e867552e3":
-          return res.send(await handlePeriodEndRequest(query, db));
-        // Get lunch menu
-        case "projects/harker-dev/agent/intents/24d439a2-aa00-44fd-b8cd-15a6e8020caf":
-          return res.send(await handleLunchRequest(query, db));
-      }
-    } catch (err) {
-      sentry.captureException(err);
-      return res.status(500).send("Internal error.");
-    }
+    // try {
+    //   const query = req.body.queryResult;
+    //   if (!query.intent) return res.status(400);
+    //   switch (query.intent.name) {
+    //     // Get bell schedule
+    //     case "projects/harker-bell/agent/intents/37afe580-ee5c-4876-84b2-5744bbfa71bb":
+    //     case "projects/harker-dev/agent/intents/c96f9a09-488d-4549-a797-4554492bc6a6":
+    //       return res.send(await handleScheduleRequest(query, db));
+    //     // Get next period
+    //     case "projects/harker-bell/agent/intents/0c87869e-6cc5-4802-8189-097c46c80525":
+    //     case "projects/harker-dev/agent/intents/47162ef2-f484-46da-acd6-80ac2f4ca667":
+    //       return res.send(await handleNextPeriodRequest(query, db));
+    //     // Get period end
+    //     case "projects/harker-bell/agent/intents/8b404980-e565-4441-8d76-33b28d54eaaa":
+    //     case "projects/harker-dev/agent/intents/7aad77d4-60fe-46ff-ae88-b24e867552e3":
+    //       return res.send(await handlePeriodEndRequest(query, db));
+    //     // Get lunch menu
+    //     case "projects/harker-dev/agent/intents/24d439a2-aa00-44fd-b8cd-15a6e8020caf":
+    //       return res.send(await handleLunchRequest(query, db));
+    //   }
+    // } catch (err) {
+    //   sentry.captureException(err);
+    //   return res.status(500).send("Internal error.");
+    // }
     return res.send("Action not found.");
   });
   
-  app.use(sentry.Handlers.errorHandler());
+  // app.use(sentry.Handlers.errorHandler());
   const server = app.listen(process.env.PORT, () => {
     console.log("Server running on port "+process.env.PORT);
   });
@@ -69,7 +69,7 @@ mongodb.connect().then(db => {
       socket.on("error", err => {
         console.log("error")
         console.error(err);
-        sentry.captureException(err);
+        // sentry.captureException(err);
       });
       socket.on("request schedule", async (data, callback) => {
         let schedules = await db.collection("schedules").find({
@@ -113,7 +113,7 @@ mongodb.connect().then(db => {
 }).catch(err => {
   console.log("bing")
   console.log(err)
-  sentry.captureException(err);
+  // sentry.captureException(err);
 
 });
 
@@ -172,7 +172,7 @@ async function handleScheduleRequest(query, db) {
               formattedText: momentDate.format("MMM D, YYYY"),
               buttons: [{
                 title: "Open bell schedule",
-                openUrlAction: {url: "https://bell.harker.org/?utm_source=gsched&utm_medium=assistant"},
+                openUrlAction: {url: "https://msbell.harker.xyz/?utm_source=gsched&utm_medium=assistant"},
               }],
             }
           }]
@@ -218,7 +218,7 @@ async function handleNextPeriodRequest(query, db) {
           }],
           linkOutSuggestion: {
             destinationName: "bell schedule",
-            openUrlAction: {url: "https://bell.harker.org/?utm_source=gpstart&utm_medium=assistant"},
+            openUrlAction: {url: "https://msbell.harker.xyz/?utm_source=gpstart&utm_medium=assistant"},
           },
         },
       }
@@ -262,7 +262,7 @@ async function handlePeriodEndRequest(query, db) {
           }],
           linkOutSuggestion: {
             destinationName: "bell schedule",
-            openUrlAction: {url: "https://bell.harker.org/?utm_source=gpend&utm_medium=assistant"},
+            openUrlAction: {url: "https://msbell.harker.xyz/?utm_source=gpend&utm_medium=assistant"},
           },
         },
       }
@@ -317,7 +317,7 @@ async function handleLunchRequest(query, db) {
               rows,
               buttons: [{
                 title: "Open lunch menu",
-                openUrlAction: {url: "https://bell.harker.org/?utm_source=glunch&utm_medium=assistant"},
+                openUrlAction: {url: "https://msbell.harker.xyz/?utm_source=glunch&utm_medium=assistant"},
               }],
             }
           }]

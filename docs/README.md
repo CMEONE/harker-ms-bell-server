@@ -1,5 +1,5 @@
 # Welcome
-Welcome to the documentation website for the [Harker Bell Schedule](https://bell.harker.org). Here you'll find guides about using our [public API](api.html), [Google Assistant service](assistant.html), and more.
+Welcome to the documentation website for the [Harker MS Bell Schedule](https://msbell.harker.xyz). Here you'll find guides about using our [public API](api.html), and more.
 
 
 ## Supported Browsers
@@ -18,7 +18,7 @@ Internet Explorer | Not supported
 
 ### Offline Mode
 
-Offline mode enables you to access the Harker Bell Schedule even without an internet connection, after you've visited it at least once.
+Offline mode enables you to access the Harker MS Bell Schedule even without an internet connection, after you've visited it at least once.
 Some older browsers do not support offline mode. See the table below for browsers that support this feature.
 
 Browser | Versions

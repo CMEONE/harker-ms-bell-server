@@ -1,6 +1,6 @@
 # Installing the App
 
-The Harker Bell Schedule can be installed onto your desktop or home screen, so you can use it just like a native app.
+The Harker MS Bell Schedule can be installed onto your desktop or home screen, so you can use it just like a native app.
 
 ## Instructions for iOS
 

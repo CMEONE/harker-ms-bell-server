@@ -1,7 +1,7 @@
 {
-  "name": "harker-bell-server",
+  "name": "harker-ms-bell-server",
   "version": "1.0.0",
-  "description": "Server exposing public API and websocket for Harker Bell Schedule.",
+  "description": "Server exposing public API and websocket for Harker MS Bell Schedule.",
   "main": "index.js",
   "scripts": {
     "dev": "nodemon index.js",
@@ -12,14 +12,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/BowenYin/harker-bell-server.git"
+    "url": "git+https://github.com/CMEONE/harker-ms-bell-server.git"
   },
-  "author": "Bowen Yin",
-  "license": "MIT",
+  "author": "Kabir Ramzan",
+  "license": "AGPL-3.0-or-later",
   "bugs": {
-    "url": "https://github.com/BowenYin/harker-bell-server/issues"
+    "url": "https://github.com/CMEONE/harker-ms-bell-server/issues"
   },
-  "homepage": "https://github.com/BowenYin/harker-bell-server#readme",
+  "homepage": "https://github.com/CMEONE/harker-ms-bell-server#readme",
   "dependencies": {
     "@sentry/node": "^5.7.1",
     "@types/mongodb": "^3.5.2",

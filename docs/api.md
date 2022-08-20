@@ -3,11 +3,11 @@
 ---
 # API Documentation
 
-We provide a free public REST API that you can use to incorporate real bell schedule, lunch menu, and event data into your project.
+I provide a free public REST API that you can use to incorporate real bell schedule, lunch menu, and event data into your project.
 
 ## Introduction
 
-The base URL for all requests is `https://bell.dev.harker.org/api` (HTTPS is required). For example, the full URL for a request to the `/schedule` endpoint would be `https://bell.dev.harker.org/api/schedule`.
+The base URL for all requests is `https://msbell-backend.harker.xyz/api` (HTTPS is required). For example, the full URL for a request to the `/schedule` endpoint would be `https://msbell-backend.harker.xyz/api/schedule`.
 
 Every endpoint supports both JSON and URL-encoded request bodies. The code examples use request bodies that are URL-encoded.
 
@@ -17,7 +17,7 @@ Also note that all dates returned in the JSON response are represented as an [IS
 Be sure to specify either a `Content-Type: application/json` or `Content-Type: application/x-www-form-urlencoded` HTTP header with each request, depending on which type you use, or else our server may get angry and throw a fit (a 400 error).
 :::
 
-Because no authentication is required, we may enforce IP-based rate limiting on all requests. If you encounter problems with accessing our API, please contact <a href="mailto:dev@harker.org" target="_blank">dev@harker.org</a>.
+Because no authentication is required, I may enforce IP-based rate limiting on all requests. If you encounter problems with accessing our API, please contact <a href="mailto:kabir@ramzan.me" target="_blank">kabir@ramzan.me</a>.
 
 ## `GET` /schedule
 
@@ -54,7 +54,7 @@ Gets the bell schedule for a given date.
 The following example gets the schedule for August 26, 2019. Copy and paste the code into a terminal window to try it out.
 ```bash
 curl --request GET \
-  --url https://bell.dev.harker.org/api/schedule \
+  --url https://msbell-backend.harker.xyz/api/schedule \
   --header "Content-Type: application/x-www-form-urlencoded" \
   --data month=8 \
   --data day=26 \
@@ -91,7 +91,7 @@ Gets the lunch menu for a given date.
 #### Example Request
 ```bash
 curl --request GET \
-  --url https://bell.dev.harker.org/api/lunchmenu \
+  --url https://msbell-backend.harker.xyz/api/lunchmenu \
   --header "Content-Type: application/x-www-form-urlencoded" \
   --data month=8 \
   --data day=26 \
@@ -145,7 +145,7 @@ Other | `other` | ![#795548](https://placehold.it/10/795548?text=+)&nbsp; Brown
 #### Example Request
 ```bash
 curl --request GET \
-  --url https://bell.dev.harker.org/api/events \
+  --url https://msbell-backend.harker.xyz/api/events \
   --header "Content-Type: application/x-www-form-urlencoded" \
   --data month=8 \
   --data day=26 \
@@ -154,7 +154,7 @@ curl --request GET \
 
 ## `GET` /clients
 
-Gets the number of clients currently connected to the Harker Bell websocket server.
+Gets the number of clients currently connected to the Harker MS Bell websocket server.
 
 #### Request Structure
 No parameters necessary.
@@ -165,12 +165,12 @@ A number representing the number of connected clients.
 #### Example Request
 ```bash
 curl --request GET \
-  --url https://bell.dev.harker.org/api/clients
+  --url https://msbell-backend.harker.xyz/api/clients
 ```
 
 ## `GET` /clientsInternal
 
-Gets the number of clients currently connected to the Harker Bell websocket server, represented by the length of the response in bytes. **For internal use.**
+Gets the number of clients currently connected to the Harker MS Bell websocket server, represented by the length of the response in bytes. **For internal use.**
 
 #### Request Structure
 No parameters necessary.

@@ -97,12 +97,12 @@ async function scheduleNextBell() {
         ninety9Pctl: vals[Math.ceil(vals.length*0.99)-1],
         bells, notifs,
       };
-      sentry.withScope(scope => {
-        scope.setTags(tags);
-        sentry.captureMessage("Virtual bell broadcasted at "+start.toLocaleString());
-        console.log(start.toLocaleString());
-        console.log(tags);
-      });
+      // sentry.withScope(scope => {
+      //   scope.setTags(tags);
+      //   sentry.captureMessage("Virtual bell broadcasted at "+start.toLocaleString());
+      //   console.log(start.toLocaleString());
+      //   console.log(tags);
+      // });
     }, 59000);
   });
 }

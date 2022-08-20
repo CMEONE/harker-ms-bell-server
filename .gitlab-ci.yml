@@ -58,8 +58,8 @@ variables:
 
   ROLLOUT_RESOURCE_TYPE: deployment
   
-  CI_PROJECT_PATH_SLUG: harker-bell
-  KUBE_NAMESPACE: harker-bell
+  CI_PROJECT_PATH_SLUG: harker-ms-bell
+  KUBE_NAMESPACE: harker-ms-bell
   
   TEST_DISABLED: "true"
 
@@ -558,7 +558,7 @@ canary:
     - persist_environment_url
   environment:
     name: production
-    url: http:/bell.dev.harker.org
+    url: http://msbell.dev.harker.org
   artifacts:
     paths: [environment_url.txt]
 
@@ -609,7 +609,7 @@ production_manual:
     - persist_environment_url
   environment:
     name: production
-    url: http://bell.dev.harker.org
+    url: http://msbell.dev.harker.org
   artifacts:
     paths: [environment_url.txt]
 

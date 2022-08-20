@@ -4,7 +4,7 @@
 This page is scary and is meant for internal use only.
 :::
 
-The base URL for all requests is `https://bell.dev.harker.org/`, which is different from that of the public API. Body payloads should be passed as JSON with a `Content-Type` header set to `application/json`.
+The base URL for all requests is `https://msbell-backend.harker.xyz/`, which is different from that of the public API. Body payloads should be passed as JSON with a `Content-Type` header set to `application/json`.
 
 All ISO date strings should be in GMT-based and GMT-centric time, like if we had school at the Prime Meridian in Greenwich. Honestly not too sure why I chose this approach, but for now we'll just have to roll with it. Some examples: for a date, simply give UTC midnight like `2021-01-01T00:00:00.000Z`, and for a period start or end time, give the date and UTC time like `2021-01-01T08:00:00.000Z`.
 

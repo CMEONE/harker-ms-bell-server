@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/harker-bell-server.iml" filepath="$PROJECT_DIR$/.idea/harker-bell-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/harker-ms-bell-server.iml" filepath="$PROJECT_DIR$/.idea/harker-ms-bell-server.iml" />
     </modules>
   </component>
 </project>
