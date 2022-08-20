@@ -1,5 +1,5 @@
 # Welcome
-Welcome to the documentation website for the [Harker MS Bell Schedule](https://msbell.harker.xyz). Here you'll find guides about using our [public API](api.html), and more.
+Welcome to the documentation website for the [Harker MS Bell Schedule](https://msbell.harker.xyz). Here you'll find guides about using our [public API](api.html) and more.
 
 
 ## Supported Browsers
