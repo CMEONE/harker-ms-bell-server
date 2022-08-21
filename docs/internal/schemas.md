@@ -41,7 +41,7 @@ This page contains database schemas for documents stored in MongoDB.
           properties: {
             name: {
               bsonType: 'string',
-              description: 'name of the period (like P1 or P2)'
+              description: 'name of the period (like Class 1 or Class 2)'
             },
             start: {
               bsonType: 'date',
@@ -163,7 +163,7 @@ This page contains database schemas for documents stored in MongoDB.
           properties: {
             name: {
               bsonType: 'string',
-              description: 'name of the period (like P1 or P2)'
+              description: 'name of the period (like Class 1 or Class 2)'
             },
             start: {
               bsonType: 'string',

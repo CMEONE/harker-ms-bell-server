@@ -64,7 +64,7 @@ async function scheduleNextBell() {
     }).sort({date: 1}).limit(1)).toArray();
     if (schedule[0] != null) {
       for (const period of schedule[0].schedule) {
-        if (period.end > date && /(^P[1-9]$)|Advisory|(Class|School) Meeting|Assembly/.test(period.name)) {
+        if (period.end > date && /(^Class [1-8]$)|Advisory|(Class|School) Meeting|Assembly/.test(period.name)) {
           if (period.start > date) {
             nextBell = period.start;
             isStartBell = true;

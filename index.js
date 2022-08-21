@@ -195,7 +195,7 @@ async function handleNextPeriodRequest(query, db) {
       date: {$gte: new Date(date.toISOString().substring(0, 10))}
     }).sort({date: 1}).limit(1)).toArray();
     for (const period of schedule[0].schedule) {
-      if (period.start > date && /(^P[1-9]$)|Assembly|Advisory|Advisee|Meeting/.test(period.name)) {
+      if (period.start > date && /(^Class [1-8]$)|Assembly|Advisory|Advisee|Meeting/.test(period.name)) {
         const momentDate = moment(period.start), momentNow = moment(now);
         if (momentDate.isAfter(momentNow, "day")) {
           const relDate = momentDate.calendar(momentNow, relDateOptions);
