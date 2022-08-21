@@ -203,17 +203,22 @@ router.post("/autofillSchedule", async (req, res) => {
         let period = schedule.schedule[i];
         if (period.name == "Collaboration") {
           switch (date.getUTCDay()) {
-            case 1: case 2: case 4:
+            case 1:
               period.name = "Office Hours";
-              period.start = "15:10:00.000";
-              period.end = "15:30:00.000";
+              period.start = "15:20:00.000";
+              period.end = "15:35:00.000";
               break;
-            case 3:
-              period.name = "Faculty Meeting";
-              period.start = "15:10:00.000";
-              period.end = "15:30:00.000";
+            case 2:
+              period.name = "Office Hours";
+              period.start = "15:25:00.000";
+              period.end = "15:40:00.000";
               break;
-            case 5:
+            case 4:
+              period.name = "Office Hours";
+              period.start = "15:20:00.000";
+              period.end = "15:35:00.000";
+              break;
+            case 3: case 5:
               schedule.schedule.splice(i, 1);
               continue;
           }
@@ -233,6 +238,136 @@ router.post("/autofillSchedule", async (req, res) => {
               break;
             case 5:
               period.name = "Clubs";
+          }
+        } else if (period.name == "Slot 1") {
+          switch (schedule.code) {
+            case "A":
+              period.name = "P1";
+              break;
+            case "B":
+              period.name = "P7";
+              break;
+            case "C":
+              period.name = "P1";
+              break;
+            case "D":
+              period.name = "P8";
+              break;
+            case "E":
+              period.name = "P1";
+              break;
+            case "F":
+              period.name = "P1";
+              break;
+            case "G":
+              period.name = "P7";
+              break;
+            case "H":
+              period.name = "P1";
+          }
+        } else if (period.name == "Slot 2") {
+          switch (schedule.code) {
+            case "A":
+              period.name = "P2";
+              break;
+            case "B":
+              period.name = "P8";
+              break;
+            case "C":
+              period.name = "P2";
+              break;
+            case "D":
+              period.name = "P2";
+              break;
+            case "E":
+              period.name = "P7";
+              break;
+            case "F":
+              period.name = "P2";
+              break;
+            case "G":
+              period.name = "P8";
+              break;
+            case "H":
+              period.name = "P2";
+          }
+        } else if (period.name == "Slot 3") {
+          switch (schedule.code) {
+            case "A":
+              period.name = "P3";
+              break;
+            case "B":
+              period.name = "P6";
+              break;
+            case "C":
+              period.name = "P5";
+              break;
+            case "D":
+              period.name = "P3";
+              break;
+            case "E":
+              period.name = "P6";
+              break;
+            case "F":
+              period.name = "P4";
+              break;
+            case "G":
+              period.name = "P3";
+              break;
+            case "H":
+              period.name = "P6";
+          }
+        } else if (period.name == "Slot 4") {
+          switch (schedule.code) {
+            case "A":
+              period.name = "P4";
+              break;
+            case "B":
+              period.name = "P3";
+              break;
+            case "C":
+              period.name = "P6";
+              break;
+            case "D":
+              period.name = "P4";
+              break;
+            case "E":
+              period.name = "P8";
+              break;
+            case "F":
+              period.name = "P5";
+              break;
+            case "G":
+              period.name = "P4";
+              break;
+            case "H":
+              period.name = "P7";
+          }
+        } else if (period.name == "Slot 5") {
+          switch (schedule.code) {
+            case "A":
+              period.name = "P5";
+              break;
+            case "B":
+              period.name = "P4";
+              break;
+            case "C":
+              period.name = "P7";
+              break;
+            case "D":
+              period.name = "P5";
+              break;
+            case "E":
+              period.name = "P3";
+              break;
+            case "F":
+              period.name = "P6";
+              break;
+            case "G":
+              period.name = "P5";
+              break;
+            case "H":
+              period.name = "P8";
           }
         }
         period.start = new Date(date.toISOString().substr(0, 11)+period.start+"Z");
@@ -360,6 +495,136 @@ router.post("/editSchedule", async (req, res) => {
             case 5:
               period.name = "Clubs";
           }
+        } else if (period.name == "Slot 1") {
+          switch (schedule.code) {
+            case "A":
+              period.name = "P1";
+              break;
+            case "B":
+              period.name = "P7";
+              break;
+            case "C":
+              period.name = "P1";
+              break;
+            case "D":
+              period.name = "P8";
+              break;
+            case "E":
+              period.name = "P1";
+              break;
+            case "F":
+              period.name = "P1";
+              break;
+            case "G":
+              period.name = "P7";
+              break;
+            case "H":
+              period.name = "P1";
+          }
+        } else if (period.name == "Slot 2") {
+          switch (schedule.code) {
+            case "A":
+              period.name = "P2";
+              break;
+            case "B":
+              period.name = "P8";
+              break;
+            case "C":
+              period.name = "P2";
+              break;
+            case "D":
+              period.name = "P2";
+              break;
+            case "E":
+              period.name = "P7";
+              break;
+            case "F":
+              period.name = "P2";
+              break;
+            case "G":
+              period.name = "P8";
+              break;
+            case "H":
+              period.name = "P2";
+          }
+        } else if (period.name == "Slot 3") {
+          switch (schedule.code) {
+            case "A":
+              period.name = "P3";
+              break;
+            case "B":
+              period.name = "P6";
+              break;
+            case "C":
+              period.name = "P5";
+              break;
+            case "D":
+              period.name = "P3";
+              break;
+            case "E":
+              period.name = "P6";
+              break;
+            case "F":
+              period.name = "P4";
+              break;
+            case "G":
+              period.name = "P3";
+              break;
+            case "H":
+              period.name = "P6";
+          }
+        } else if (period.name == "Slot 4") {
+          switch (schedule.code) {
+            case "A":
+              period.name = "P4";
+              break;
+            case "B":
+              period.name = "P3";
+              break;
+            case "C":
+              period.name = "P6";
+              break;
+            case "D":
+              period.name = "P4";
+              break;
+            case "E":
+              period.name = "P8";
+              break;
+            case "F":
+              period.name = "P5";
+              break;
+            case "G":
+              period.name = "P4";
+              break;
+            case "H":
+              period.name = "P7";
+          }
+        } else if (period.name == "Slot 5") {
+          switch (schedule.code) {
+            case "A":
+              period.name = "P5";
+              break;
+            case "B":
+              period.name = "P4";
+              break;
+            case "C":
+              period.name = "P7";
+              break;
+            case "D":
+              period.name = "P5";
+              break;
+            case "E":
+              period.name = "P3";
+              break;
+            case "F":
+              period.name = "P6";
+              break;
+            case "G":
+              period.name = "P5";
+              break;
+            case "H":
+              period.name = "P8";
+          }
         }
         if (period.start) {
           if (period.start.length <= 12) // if no date part is included
@@ -451,6 +716,136 @@ router.post("/addFromPreset", async (req, res) => {
             break;
           case 5:
             period.name = "Clubs";
+        }
+      } else if (period.name == "Slot 1") {
+        switch (schedule.code) {
+          case "A":
+            period.name = "P1";
+            break;
+          case "B":
+            period.name = "P7";
+            break;
+          case "C":
+            period.name = "P1";
+            break;
+          case "D":
+            period.name = "P8";
+            break;
+          case "E":
+            period.name = "P1";
+            break;
+          case "F":
+            period.name = "P1";
+            break;
+          case "G":
+            period.name = "P7";
+            break;
+          case "H":
+            period.name = "P1";
+        }
+      } else if (period.name == "Slot 2") {
+        switch (schedule.code) {
+          case "A":
+            period.name = "P2";
+            break;
+          case "B":
+            period.name = "P8";
+            break;
+          case "C":
+            period.name = "P2";
+            break;
+          case "D":
+            period.name = "P2";
+            break;
+          case "E":
+            period.name = "P7";
+            break;
+          case "F":
+            period.name = "P2";
+            break;
+          case "G":
+            period.name = "P8";
+            break;
+          case "H":
+            period.name = "P2";
+        }
+      } else if (period.name == "Slot 3") {
+        switch (schedule.code) {
+          case "A":
+            period.name = "P3";
+            break;
+          case "B":
+            period.name = "P6";
+            break;
+          case "C":
+            period.name = "P5";
+            break;
+          case "D":
+            period.name = "P3";
+            break;
+          case "E":
+            period.name = "P6";
+            break;
+          case "F":
+            period.name = "P4";
+            break;
+          case "G":
+            period.name = "P3";
+            break;
+          case "H":
+            period.name = "P6";
+        }
+      } else if (period.name == "Slot 4") {
+        switch (schedule.code) {
+          case "A":
+            period.name = "P4";
+            break;
+          case "B":
+            period.name = "P3";
+            break;
+          case "C":
+            period.name = "P6";
+            break;
+          case "D":
+            period.name = "P4";
+            break;
+          case "E":
+            period.name = "P8";
+            break;
+          case "F":
+            period.name = "P5";
+            break;
+          case "G":
+            period.name = "P4";
+            break;
+          case "H":
+            period.name = "P7";
+        }
+      } else if (period.name == "Slot 5") {
+        switch (schedule.code) {
+          case "A":
+            period.name = "P5";
+            break;
+          case "B":
+            period.name = "P4";
+            break;
+          case "C":
+            period.name = "P7";
+            break;
+          case "D":
+            period.name = "P5";
+            break;
+          case "E":
+            period.name = "P3";
+            break;
+          case "F":
+            period.name = "P6";
+            break;
+          case "G":
+            period.name = "P5";
+            break;
+          case "H":
+            period.name = "P8";
         }
       }
       period.start = new Date(date.toISOString().substr(0, 11)+period.start+"Z");
